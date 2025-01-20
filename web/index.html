@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rasa Chatbot</title>
+</head>
+<body>
+    <div id="webchat"></div>
+    <script src="https://cdn.jsdelivr.net/npm/rasa-webchat/lib/index.min.js"></script>
+    <script>
+        window.WebChat.default.init({
+            selector: "#webchat",
+            initPayload: "/greet",
+            customData: { language: "id" },
+            socketUrl: "http://localhost:5005",
+            title: "Rasa Chatbot",
+            subtitle: "Tanya apa saja!",
+        });
+    </script>
+</body>
+</html>
