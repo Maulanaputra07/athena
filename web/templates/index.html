@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chatbot</title>
+    <link rel="stylesheet" href="/web/style.css">
+</head>
+<body>
+    <div class="chat-container">
+        <div id="chat-box" class="chat-box"></div>
+        <input type="text" id="user-input" placeholder="Type a message...">
+        <button id="send-btn">Send</button>
+    </div>
+
+    <script>
+        document.getElementById('send-btn').addEventListener('click', function() {
+            console.log("click");
+            let userMessage = document.getElementById('user-input').value;
+        
+            if (userMessage.trim() === "") return;
+        
+            // Menampilkan pesan pengguna di chat box
+            let chatBox = document.getElementById('chat-box');
+            chatBox.innerHTML += `<div>User: ${userMessage}</div>`;
+            document.getElementById('user-input').value = "";
+        
+            // Kirim pesan ke server Flask
+            fetch('http://localhost:5000/chat', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({ message: userMessage })
+            })
+            .then(response => response.json())
+            .then(data => {
+                // Menampilkan respons chatbot
+                let chatBox = document.getElementById('chat-box');
+                chatBox.innerHTML += `<div>Chatbot: ${data.response[0].text}</div>`;
+                chatBox.scrollTop = chatBox.scrollHeight; // Scroll ke bawah
+            })
+            .catch(error => console.error('Error:', error));
+        });        
+    </script>
+</body>
+</html>
