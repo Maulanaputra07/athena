@@ -1,7 +1,6 @@
 #!/bin/bash
-
-# Menjalankan rasa run actions di background
+# Menjalankan Action Server di background
 rasa run actions &
 
-# Menjalankan rasa run API
+# Menjalankan Rasa Server
 rasa run --enable-api --cors "*"
