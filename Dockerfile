@@ -8,6 +8,15 @@ WORKDIR /app
 # Menjalankan perintah dengan hak akses root
 USER root
 
+# Menyalin file start.sh ke dalam container
+COPY start.sh /app/start.sh
+
+# Memberikan izin eksekusi pada start.sh
+RUN chmod +x /app/start.sh
+
+# Menjalankan skrip start.sh
+CMD ["/app/start.sh"]
+
 # Memastikan pip sudah terinstal dan mengupgradenya
 RUN python -m ensurepip --upgrade && \
     pip install --upgrade pip --no-cache-dir
