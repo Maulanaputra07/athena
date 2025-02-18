@@ -18,11 +18,5 @@ RUN pip uninstall -y confluent-kafka
 # Install dependensi dari requirements.txt
 RUN pip install -r requirements.txt --no-cache-dir
 
-# Menyalin file start.sh ke dalam container
-COPY start.sh /app/start.sh
-
-# Memberikan izin eksekusi pada start.sh
-RUN chmod +x /app/start.sh
-
-# Menjalankan skrip start.sh
-CMD ["/bin/bash", "/app/start.sh"]
+# Menjalankan server Rasa dengan API dan CORS, dan actions di background
+CMD ["bash", "-c", "rasa run --enable-api --cors '*' & rasa run actions"]
