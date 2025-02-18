@@ -23,4 +23,4 @@ COPY start.sh /app/start.sh
 RUN chmod +x /app/start.sh
 
 # Menjalankan start.sh yang mengatur eksekusi Rasa dan actions
-ENTRYPOINT ["/bin/bash", "/app/start.sh"]
+ENTRYPOINT ["/bin/bash", "/start.sh"]
