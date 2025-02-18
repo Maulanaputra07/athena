@@ -1,6 +1,2 @@
 rasa==3.5.17
-<<<<<<< HEAD
 rasa-sdk==3.5.1
-=======
-rasa-sdk==3.5.1
->>>>>>> 6010ce1e787c39df3bba799b3c71dbacdf1aee8d
