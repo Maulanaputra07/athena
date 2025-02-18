@@ -1,0 +1,80 @@
+version: "3.1"
+
+stories:
+
+# - story: user greets the bot
+#   steps:
+#   - intent: greetuser
+#   - action: action_greet
+
+- story: user question
+  steps:
+  - intent: question
+  - action: utter_question
+
+- story: greet and ask for help
+  steps:
+  - intent: greetuser
+  - action: utter_greet
+  - intent: question
+  - action: utter_question
+
+- story: User bertanya tentang jurusan setelah memilih
+  steps:
+    - intent: pilih_jurusan
+      entities:
+        - jurusan
+    - slot_was_set:
+        - jurusan
+    - action: action_set_jurusan
+    - action: utter_telah_memilih_jurusan
+    - intent: tanya_detail_jurusan
+    - action: action_jelaskan_jurusan
+
+
+# - story: pendaftaran
+#   steps:
+#   - intent: greet
+#   - action: action_greet
+#   - intent: tanggal
+#   - action: utter_tanggal
+#   - intent: jurusan
+#   - action: utter_jurusan
+#   - intent: pilih_jurusan
+#   - action: action_set_jurusan
+#   - action: utter_telah_memilih_jurusan
+#   - intent: tanya_detail_jurusan
+#   - action: utter_detail_jurusan
+#   - intent: daftar
+#   - action: utter_daftar
+
+# - story: user ask detail major
+#   steps:
+#   - intent: tanya_detail_jurusan
+#   # - action: action_set_jurusan
+#   - action: utter_detail_jurusan
+
+- story: user like computer
+  steps:
+  - intent: bingung_jurusan
+  - action: utter_computer
+  - intent: affirm
+  - action: action_set_computer_preference
+  - slot_was_set:
+    - likes_computer: True
+  - action: utter_awsome
+
+- story: user doesn't like computer
+  steps:
+  - intent: bingung_jurusan
+  - action: utter_computer
+  - intent: deny
+  - action: action_set_computer_preference
+  - slot_was_set:
+    - likes_computer: False
+  - action: utter_goodbye
+
+# - story: user ask id
+#   steps:
+#   - intent: id
+#   - action: action_log_conversation_id

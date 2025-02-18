@@ -1,0 +1,166 @@
+version: "3.1"
+
+rules:
+
+- rule: Say goodbye anytime the user says goodbye
+  steps:
+  - intent: goodbye
+  - action: utter_goodbye
+
+- rule: Say 'I am a bot' anytime the user challenges
+  steps:
+  - intent: bot_explain
+  - action: utter_iamabot
+
+- rule: Respond to specific greet
+  condition:
+    - slot_was_set:
+        - greeting_type: "assalamualaikum"
+  steps:
+    - action: utter_greet_specific
+
+- rule: Greet rule
+  steps:
+  - intent: greetuser
+  - action: utter_greet
+
+- rule: Respond to greet_time
+  steps:
+  - intent: greet_time
+  - action: action_set_greeting_time
+  - action: utter_greet_time
+
+- rule: user question
+  steps:
+  - intent: question
+  - action: utter_question
+
+
+- rule: Tanggapi perkenalan pengguna
+  steps:
+    - intent: perkenalan
+    - action: action_set_nama_user
+    - action: utter_perkenalan
+
+- rule: Menyapa dengan nama
+  condition:
+    - slot_was_set:
+      - nama_user
+  steps:
+    - intent: greetuser
+    - action: utter_greet_user
+
+- rule: Jawab pertanyaan tentang jurusan yang terakhir disebut saat slot kosong
+  condition:
+    - slot_was_set:
+        - jurusan: null
+  steps:
+    - intent: tanya_detail_jurusan
+    - action: action_jelaskan_jurusan
+
+- rule: Jawab pertanyaan tentang jurusan telah dipilh
+  condition:
+    - slot_was_set:
+        - jurusan
+  steps:
+    - intent: tanya_detail_jurusan
+    - action: action_jelaskan_jurusan
+
+- rule: tanggal_pendaftaran
+  steps:
+  - intent: tanggal
+  - action: utter_tanggal
+
+- rule: jawab pertanyaan FAQ
+  steps:
+  - intent: faq
+  - action: utter_faq
+
+- rule: user pilih
+  steps:
+  - intent: pilih_jurusan
+  - action: action_set_jurusan
+  - action: utter_telah_memilih_jurusan
+
+- rule: bingung
+  steps:
+  - intent: bingung_jurusan
+  - action: utter_computer
+
+- rule: daftar_ulang
+  steps:
+  - intent: daftar_ulang
+  - action: utter_daftar_ulang
+
+- rule: dokumen
+  steps:
+  - intent: dokumen
+  - action: utter_dokumen
+
+- rule: Handle Fallback
+  steps:
+  - intent: nlu_fallback
+  - action: action_log_fallback
+  
+# - rule: agree
+#   steps:
+#   - intent: affirm
+#   - action: utter_awsome
+
+# - rule: Fallback Rule
+#   steps:
+#     - intent: nlu_fallback
+#     - action: utter_default
+
+# - rule: perkenalan user
+#   steps:
+#   - intent: perkenalan
+#   - action: utter_perkenalan
+
+# - rule: Capture name from user
+#   steps:
+#   - intent: perkenalan
+#   - action: utter_perkenalan
+#   - slot_was_set:
+#       - nama: "{{ nama }}"
+
+# - rule: Trigger form for perkenalan
+#   steps:
+#   - intent: perkenalan
+#   - action: perkenalan_form
+
+
+# - rule: jurusan
+#   steps:
+#   - intent: jurusan
+#   - action: utter_jurusan
+
+# - rule: user ask detail jurusan
+#   steps:
+#   - intent: tanya_detail_jurusan
+#   # - action: action_set_jurusan
+#   - action: utter_detail_jurusan
+
+
+# - rule: user_cek_jurusan
+#   steps:
+#   - intent: tanya_detail_jurusan
+#   - action: utter_detail_jurusan
+
+
+# - rule: tanya_pendaftaran
+#   steps:
+#   - intent: daftar
+#   - action: utter_daftar
+
+
+
+# - rule: informasi_sekolah
+#   steps:
+#   - intent: informasi_sekolah
+#   - action: utter_informasi_sekolah
+
+# - rule: respond id
+#   steps:
+#   - intent: id
+#   - action: action_log_conversation_id

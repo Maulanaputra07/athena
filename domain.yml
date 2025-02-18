@@ -1,0 +1,208 @@
+version: '3.1'
+intents:
+- affirm
+- bot_explain
+- deny
+- goodbye
+# - greet
+- greet_time
+- greetuser
+- perkenalan
+- question
+- tanggal
+- tanya_detail_jurusan
+- nlu_fallback
+# - daftar
+- bingung_jurusan
+- pilih_jurusan
+- kontak
+- daftar_ulang
+- dokumen
+- faq
+
+
+retrieval_intents:
+  - ppdb
+  - jurusan
+  - informasi_sekolah
+
+entities:
+- greeting_type
+- nama_user
+- time
+
+slots:
+  jurusan:
+    type: text
+    influence_conversation: true
+    mappings:
+      - type: from_entity
+        entity: jurusan
+    # auto_fill: false
+
+  informasi_jurusan:
+    type: text
+    influence_conversation: true
+    mappings:
+      - type: custom
+    # auto_fill: false
+
+  fallback_count:
+    type: any
+    initial_value: 0
+    mappings:
+      - type: custom
+
+  likes_computer:
+    type: bool
+    influence_conversation: true
+    mappings:
+    - type: custom
+
+  greeting_type:
+    type: text
+    influence_conversation: true
+    mappings:
+    - type: from_entity
+      entity: greeting_type
+      
+  time:
+    type: text
+    influence_conversation: false
+    mappings:
+    - type: from_entity
+      entity: time
+      intent: greet_time
+
+  # nama:
+  #   type: text
+  #   influence_conversation: false
+  #   mappings:
+  #     - type: from_entity
+  #       entity: nama
+
+  nama_user:
+    type: text
+    influence_conversation: true
+    mappings:
+      - type: from_entity
+        entity: nama_user
+
+forms:
+  perkenalan_form:
+    required_slots:
+    - nama_user
+
+response_selector:
+  faq:
+    retrieval_intents:
+      - ppdb
+      - jurusan
+      - informasi_sekolah
+
+responses:
+  utter_faq/ppdb:
+    - text: "Mau daftar? Gampang banget! Kamu bisa daftar lewat WhatsApp atau langsung ke website [link]. Abis itu, tinggal daftar ulang ke sekolah."
+
+  utter_faq/jurusan:
+    - text: |
+        Nih list jurusan keren di SMK Tunas Harapan Pati! Pilih yang paling cocok buat kamu:
+        - Teknik Jaringan Komputer dan Telekomunikasi  
+        - Teknik Otomasi Industri  
+        - Teknik Instalasi Tenaga Listrik  
+        - Kimia Analisis  
+        - Desain Komunikasi Visual  
+        - Broadcasting TV & Film  
+        - Teknik Otomotif  
+        - Teknik Las  
+        - Teknik Mesin  
+        Ada yang bikin penasaran? Tanya aja, jangan malu-malu! 😉
+
+  utter_faq/informasi_sekolah:
+    - text: "SMK Tunas Harapan Pati adalah sekolah kejuruan yang berada di Pati"
+
+  utter_greet_specific:
+  - text: Waalaikumsalam! Salam hangat untuk Anda.
+  
+  utter_greet:
+  - text: Haii! Aku Athena ✨ Siap jawab semua pertanyaan kamu tentang SMK Tunas Harapan Pati. Mau tanya soal jurusan, kegiatan sekolah, atau pengalaman seru di sini? Aku akan bantu jawabin 🔥😎
+  
+  utter_greet_user:
+  - text: Halo {nama_user}, gimana kabarnya? Lagi nyari info apa nih? Aku siap bantu!
+  
+  utter_greet_time:
+  - text: Selamat {time}! Aku Athena, siap nemenin kamu cari info soal SMK Tunas Harapan Pati. Yuk, tanya-tanya aja!
+  
+  utter_goodbye:
+  - text: selamat tinggal
+  - text: terimakasih telah berkunjung
+  - text: terimakasih semoga harimu menyenangkan
+  - text: terimakasih
+  
+  utter_iamabot:
+  - text: Hai! Aku Athena, asisten virtual yang siap bantu kamu soal pendaftaran dan pertanyaan tentang SMK Tunas Harapan Pati. Biar lebih akrab, boleh tau namanya siapa?
+  
+  utter_question:
+  - text: "Saya dapat membantu anda dengan menjawab pertanyaan mengenai SMK Tunas Harapan Pati, membantu anda dalam melakukan pendaftaran, dan hal-hal yang berkaitan dengan SMK Tunas Harapan Pati"
+  
+  utter_perkenalan:
+  - text: Wih, {nama_user}, nama keren sekali! Jadi, mau cari info apa nih?
+  
+  utter_tanggal:
+  - text: Pendaftaran dibuka pada tanggal 11 maret.
+  
+  utter_telah_memilih_jurusan:
+  - text: Oke, mantap! Kamu udah pilih jurusan {jurusan}. Mau tau lebih dalam soal jurusan ini? Aku punya banyak info buat kamu! 📚
+  
+  utter_detail_jurusan:
+  - text: |
+      Nih, info detail tentang jurusan {jurusan}:
+        {informasi_jurusan}
+        Kalau masih ada yang kurang jelas, tanya aja ya! 🤩
+      
+  utter_default:
+  - text: >
+      Maaf, saya tidak dapat memahami maksud anda.
+
+  # utter_daftar:
+  # - text: Kamu dapat melakukan pendaftaran menggunakan Whatsap atau dengan mengunjungi website [link] untuk melakukan pendaftaran online, Kemudian lakukan pendaftaran ulang di sekolah. 
+  
+  utter_computer:
+  - text: apakah kamu suka komputer dan pemrogramman?
+  
+  utter_awsome:
+  - text: Bagus sekali!! kamu bisa cocok dalam TJKT karena terdapat software dan hardware
+
+  utter_daftar_ulang:
+  - text: |
+      Berikut adalah langkah-langkah untuk daftar ulang:
+      1. Datang ke sekolah dan menemui admin pendaftaran.
+      2. Tunjukan QR kode pendaftaran yang telah dikirim melalui email.
+      3. Serahkan dokumen yang diperlukan, seperti fotokopi kartu keluarga.
+      4. Bawa materai 10 ribu sebanyak 2 lembar untuk keperluan administrasi.
+      5. Lakukan pembayaran angsuran pertama sesuai dengan ketentuan sekolah.
+      6. Pastikan semua proses telah diselesaikan untuk mengkonfirmasi pendaftaran ulang.
+
+  # utter_informasi_sekolah:
+  # - text: SMK Tunas Harapan Pati adalah sekolah kejuruan yang berada di Pati
+
+  utter_dokumen:
+  - text: |
+      Untuk dokumen / berkas yang dibutuhkan dalam daftar ulang adalah:
+      1. Fotokopi Kartu Keluarga
+      2. Materai 10 ribu 2 lembar
+
+actions:
+# - action_greet
+- action_set_greeting_time
+- action_use_indobert
+- action_set_jurusan
+- action_set_nama_user
+- action_log_fallback
+- action_log_conversation_id
+- action_set_computer_preference
+- action_jelaskan_jurusan
+
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: true

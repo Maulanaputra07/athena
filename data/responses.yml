@@ -1,0 +1,19 @@
+# responses:
+#   faq/ppdb:
+#     - text: "Kamu dapat melakukan pendaftaran menggunakan Whatsap atau dengan mengunjungi website [link] untuk melakukan pendaftaran online, Kemudian lakukan pendaftaran ulang di sekolah."
+
+#   faq/jurusan:
+#     - text: |
+#       di tunas harapan memiliki beberapa jurusan:
+#       - Teknik Jaringan Komputer dan Telekomunikasi
+#       - Teknik Otomasi Industri
+#       - Teknik Instalasi Tenaga Listrik
+#       - Kimia Analisis
+#       - Desain Komunikasi Visual
+#       - Broadcasting TV & Film
+#       - Teknik Otomotif
+#       - Teknik Las 
+#       - Teknik Mesin
+
+#   faq/informasi_sekolah:
+#     - text: "SMK Tunas Harapan Pati adalah sekolah kejuruan yang berada di Pati"

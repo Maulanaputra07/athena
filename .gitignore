@@ -12,11 +12,11 @@ logs/
 *.bak
 
 # Ignore Rasa configuration files for sensitive data
-config.yml
-domain.yml
+# config.yml
+# domain.yml
 
 # Ignore Rasa data files if you want to exclude them from versioning
-data/
+# data/
 
 # Ignore backup files
 *~

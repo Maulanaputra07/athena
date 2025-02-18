@@ -1,0 +1,341 @@
+version: "3.1"
+
+nlu:
+# - intent: faq
+#   examples: |
+#     - Apa saja syarat ppdb?
+#     - Bagaimana cara mendaftar?
+#     - Kapan pendaftaran dibuka?
+#     - Apa saja jurusan yang tersedia?
+#     - Apa keunggulan dari SMK Tunas Harapan Pati?
+
+# - intent: greet
+#   examples: |
+#     - hey
+#     - hello
+#     - hi
+#     - hello there
+#     - good morning
+#     - good evening
+#     - goodmorning
+#     - goodevening
+#     - good afternoon
+#     - halo
+#     - hola
+#     - uy
+#     - [assalamualaikum](greeting_type)
+#     - salom
+
+- intent: greet_time
+  examples: |
+    - selamat pagi
+    - Selamat pagi
+    - selamat siang
+    - Selamat siang
+    - selamat malam
+    - Selamat malam
+    - selamat sore
+    - Selamat sore
+    - sore
+    - Sore
+    - pagi
+    - Pagi
+    - Siang
+    - siang
+    - Malam
+    - malam
+
+- intent: goodbye
+  examples: |
+    - sampai jumpa
+    - good by
+    - cee you later
+    - good night
+    - bye
+    - goodbye
+    - have a nice day
+    - see you around
+    - bye bye
+    - see you later
+    - dahhh
+    - sudah, terima kasih
+    - terimakasih
+
+- intent: affirm
+  examples: |
+    - yes
+    - y
+    - indeed
+    - of course
+    - that sounds good
+    - correct
+    - iya
+    - iy
+    - ya
+    - nggih
+    - Iya
+    - jelas
+    - oh tentu
+    - sangat suka
+    - suka
+    - boleh
+
+- intent: deny
+  examples: |
+    - no
+    - n
+    - never
+    - I don't think so
+    - don't like that
+    - no way
+    - not really
+    - tidak
+    - tidak juga
+    - tidak mau
+    - tidak tentu
+
+- intent: bot_explain
+  examples: |
+    - are you a bot?
+    - are you a human?
+    - am I talking to a bot?
+    - am I talking to a human?
+    - kamu bot?
+    - apa itu bot?
+    - bot?
+    - jelasin soal athena dong
+    - apasih itu athena
+    - ini bot?
+    - siapa kamu sebenarnya?
+    - Eh, ini aku lagi chat sama bot atau manusia nih?
+    - Kamu bot atau orang beneran?
+    - Siapa sih kamu sebenarnya?
+    - Ini AI atau admin sekolah?
+    - Athena itu siapa sih?
+    - Jelasin dong, Athena itu apa?
+    - Aku ngobrol sama siapa nih?
+    - Kamu bisa bantuin apa aja sih?
+    - Oke, sebelum lanjut, kenalan dulu dong. Nama kamu siapa?
+    - Sebenernya aku lagi chat sama siapa, boleh tau namanya?
+
+- intent: greetuser
+  examples: |
+    - Halo
+    - halo
+    - hei
+    - halo athena
+    - uy
+    - bro
+    - cuy
+    - Hi
+    - Hey
+    - Selamat pagi
+    - Selamat sore
+    - Apa kabar
+    - Hai bot
+    - Halo Athena
+    - hai
+    - Halo kak
+    - hai kak
+    - Halo mas
+    - Mas
+    - Kak
+
+- intent: question
+  examples: |
+    - apa saja yang dapat kamu lakukan?
+    - apa fitur kamu?
+    - apa yang dapat kamu bantu?
+    - hal apa yang dapat kamu lakukan?
+    - sebutkan fitur kamu
+
+- intent: faq/ppdb
+  examples: |
+    - apa saja syarat ppdb?
+    - berikan informasi mengenai pendaftaran
+    - bagaimana cara mendaftar disini?
+    - saya ingin mendaftar
+    - Bagaimana cara mendaftar?
+    - Apa saja langkah-langkah untuk mendaftar?
+    - Saya ingin daftar, bagaimana caranya?
+    - Bisa daftar lewat website atau WhatsApp?
+    - Dimana saya bisa mendapatkan informasi pendaftaran?
+    - Saya ingin melakukan pendaftaran, apa yang harus saya lakukan?
+    - Tolong bantu saya untuk mendaftar.
+    - Bagaimana proses pendaftaran dilakukan?
+    - Apa syarat untuk bisa mendaftar?
+    - Bisa jelaskan cara daftar secara lengkap?
+    - Saya butuh panduan untuk mendaftar.
+    - Bagaimana jika saya ingin daftar secara offline?
+    - Apakah ada biaya pendaftaran yang harus dibayar?
+    - daftar
+    - aku ingin mendaftar
+    - informasi langkah-langkah pendaftaran
+    - jelaskan mengenai pendaftaran
+    - Kak, bagaimana cara mendaftar
+    - Permisi, bagaimana cara mendaftar ya?
+    - Kak bantu saya lakukan pendaftaran
+
+- intent: faq/jurusan
+  examples: |
+    - apa saja jurusan yang terdapat di sini?
+    - ada berapa jurusan?
+    - sebutkan jurusan apa saja di sini
+    - jurusan yang tersedia?
+
+- intent: bingung_jurusan
+  examples: |
+    - saya bingung ingin memilih jurusan apa
+    - berikan saya saran untuk memilih jurusan
+    - bantu saya memilih jurusan
+
+- intent: pilih_jurusan
+  examples: |
+    - saya memilih Teknik Jaringan Komputer dan Telekomunikasi(jurusan)
+    - saya memilih TJKT(jurusan)
+    - Saya pilih Teknik Otomasi Industri(jurusan)
+    - Saya pilih TOI(jurusan)
+    - Aku ingin masuk ke dalam jurusan Teknik Instalasi Tenaga Listrik(jurusan)
+    - Aku ingin masuk ke jurusan TITL(jurusan)
+    - Saya tertarik dengan jurusan Kimia Analisis(jurusan)
+    - Saya mau pilih KA(jurusan)
+    - Saya ingin belajar di jurusan Desain Komunikasi Visual(jurusan)
+    - Aku pilih jurusan DKV(jurusan)
+    - Aku mau ke Broadcasting TV & Film(jurusan)
+    - Aku pilih jurusan Broadcasting(jurusan)
+    - Saya ingin masuk ke Teknik Otomotif(jurusan)
+    - Pilihan saya adalah jurusan TO(jurusan)
+    - Saya ingin mendaftar di Teknik Las(jurusan)
+    - Saya mau pilih jurusan TL(jurusan)
+    - Aku memilih Teknik Mesin(jurusan)
+    - Pilihanku adalah jurusan TM(jurusan)
+    - Saya ingin mendalami jurusan Teknik Jaringan Komputer dan Telekomunikasi(jurusan)
+    - Saya mau masuk jurusan TJKT(jurusan)
+    - Aku lebih suka jurusan Teknik Otomasi Industri(jurusan)
+    - Aku pilih TOI(jurusan)
+    - Saya mau belajar di Teknik Instalasi Tenaga Listrik(jurusan)
+    - Saya memilih TITL(jurusan)
+    - Saya lebih tertarik ke jurusan Kimia Analisis(jurusan)
+    - Saya ingin mencoba KA(jurusan)
+    - Saya pikir Desain Komunikasi Visual cocok untuk saya
+    - Aku mau masuk DKV(jurusan)
+    - Jurusan yang saya pilih adalah Broadcasting TV & Film(jurusan)
+    - Saya ingin masuk ke jurusan Broadcasting(jurusan)
+    - Saya suka bidang Teknik Otomotif(jurusan)
+    - Saya mau ke TO(jurusan)
+    - Pilihan saya adalah Teknik Las(jurusan)
+    - Saya tertarik dengan TL(jurusan)
+    - Saya memilih jurusan Teknik Mesin(jurusan)
+    - Saya ingin belajar TM(jurusan)
+
+
+- intent: tanya_detail_jurusan
+  examples: |
+    - Jelaskan mengenai Teknik Jaringan Komputer dan Telekomunikasi(jurusan)
+    - Apa itu jurusan teknik otomasi industri(jurusan)
+    - Berikan penjelasan mengenai teknik mesin dong
+    - Apa yang dilakukan dalam jurusan Kimia analisis(jurusan)
+    - Jelaskan mengenai TJKT(jurusan)
+    - Jelaskan mengenai Teknik Las(jurusan)
+    - jelaskan jurusan itu
+    - jelaskan jurusan tadi
+    - Apa jurusan tadi?
+    - berikan penjelasan mengenai jurusan itu
+
+- intent: tanggal
+  examples: |
+    - Kapan pendaftaran dibuka?
+    - Kapan saya bisa melakukakn pendaftaran?
+    - Jadwal PPDB kapan ya?
+    - tanggal berapa pendaftaran dibuka?
+
+- intent: dokumen
+  examples: |
+    - Apa saja dokumen yang dibutuhkan dalam daftar ulang?
+    - Jika saya ingin mendaftar harus membawa dokumen apa saja?
+    - berkas apa yang diperlukan?
+    - dokumen apa saja yang perlu dibawa?
+    - apakah hanya memerlukan fotokopi kartu keluarga sebagai dokumen daftar ulang
+
+- intent: kontak
+  examples: |
+    - Siapa yang dapat saya hubungi untuk PPDB?
+    - Nomor telepon PPDB?
+    - Nomor telepon admin
+    - bagaimana cara saya menghubungi admin ppdb?
+    - Bagaimana cara menghubungi SMK Tunas Harapan Pati?
+    
+- regex: nama
+  examples: |
+    - [A-Za-z]+(?: [A-Za-z]+)*
+
+- intent: perkenalan
+  examples: |
+    - Nama saya [Maulana](nama_user)
+    - nama saya [maulana](nama_user)
+    - nama saya adalah [maulana](nama_user)
+    - Saya [Putra Pamungkas](nama_user)
+    - saya [putra pamungkas](nama_user)
+    - Hai, nama saya [Rian](nama_user)
+    - hai, saya [ucup](nama_user)
+    - Perkenalkan, saya [Andi](nama_user)
+    - perkenalkan, saya [andi](nama_user)
+    - [Dewi](nama_user)
+    - [dewi](nama_user)
+    - panggil saya [Putra](nama_user)
+    - panggil saja [reza](nama_user)
+
+# - intent: daftar
+#   examples: |
+#     - Bagaimana cara mendaftar?
+#     - Apa saja langkah-langkah untuk mendaftar?
+#     - Saya ingin daftar, bagaimana caranya?
+#     - Bisa daftar lewat website atau WhatsApp?
+#     - Dimana saya bisa mendapatkan informasi pendaftaran?
+#     - Saya ingin melakukan pendaftaran, apa yang harus saya lakukan?
+#     - Tolong bantu saya untuk mendaftar.
+#     - Bagaimana proses pendaftaran dilakukan?
+#     - Apa syarat untuk bisa mendaftar?
+#     - Bisa jelaskan cara daftar secara lengkap?
+#     - Saya butuh panduan untuk mendaftar.
+#     - Bagaimana jika saya ingin daftar secara offline?
+#     - Apakah ada biaya pendaftaran yang harus dibayar?
+#     - daftar
+#     - aku ingin mendaftar
+#     - informasi langkah-langkah pendaftaran
+#     - jelaskan mengenai pendaftaran
+  
+- intent: nlu_fallback
+  examples: |
+    - [UNKNOWN]
+
+- intent: daftar_ulang
+  examples: |
+    - Apa saja yang harus dibawa saat daftar ulang?
+    - Bagaimana langkah-langkah daftar ulang?
+    - Dokumen apa yang harus saya serahkan untuk daftar ulang?
+    - Kapan saya harus datang ke sekolah untuk daftar ulang?
+    - Cara daftar ulang
+    - Saya bingung bagaimana daftar ulang
+    - Apa saja persiapan daftar ulang
+    - Saya ingin daftar ulang
+    - Tutorial daftar ulang
+    - saya ingin daftar ulang nih, bagaimana caranya?
+    - jelaskan mengenai daftar ulang
+    - cara melakukan pendaftaran ulang
+    - bagaimana cara melakukan pendaftaran ulang
+
+- intent: faq/informasi_sekolah
+  examples: |
+    - Apa itu SMK Tunas Harapan Pati?
+    - Bisa ceritakan tentang SMK Tunas Harapan Pati?
+    - Dimana lokasi SMK Tunas Harapan Pati?
+    - Apa keunggulan dari SMK Tunas Harapan Pati?
+    - Berikan penjelasan mengenai SMK Tunas Harpan Pati
+    - Jelaskan smk tunas harapan pati
+    
+
+# - intent: id
+#   examples: |
+#     - apa id percakapan saya?
+#     - berapa id percakapan saya?
