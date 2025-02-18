@@ -45,7 +45,7 @@ class ActionGreetTime(Action):
         else:
             time = "hari"
         
-        dispatcher.utter_message(text=f"Selamat {time}, saya Athena siap membantu anda")
+        # dispatcher.utter_message(text=f"Selamat {time}, saya Athena siap membantu anda")
         return [SlotSet("time", time)]
 
 class ActionSetJurusan(Action):
