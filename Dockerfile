@@ -18,5 +18,9 @@ RUN pip uninstall -y confluent-kafka
 # Install dependensi dari requirements.txt
 RUN pip install -r requirements.txt --no-cache-dir
 
-# Menjalankan server Rasa dengan API dan CORS, dan actions di background
-CMD ["bash", "-c", "rasa run --enable-api --cors '*' & rasa run actions"]
+# Membuat file start.sh untuk menjalankan Rasa dengan API dan actions
+COPY start.sh /app/start.sh
+RUN chmod +x /app/start.sh
+
+# Menjalankan start.sh yang mengatur eksekusi Rasa dan actions
+ENTRYPOINT ["/bin/bash", "/app/start.sh"]
