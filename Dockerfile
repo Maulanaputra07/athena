@@ -25,4 +25,4 @@ COPY start.sh /app/start.sh
 RUN chmod +x /app/start.sh
 
 # Menjalankan skrip start.sh
-CMD ["/app/start.sh"]
+CMD ["/bin/bash", "/app/start.sh"]
