@@ -19,8 +19,8 @@ RUN pip uninstall -y confluent-kafka
 RUN pip install -r requirements.txt --no-cache-dir
 
 # Membuat file start.sh untuk menjalankan Rasa dengan API dan actions
-COPY start.sh /app/start.sh
-RUN chmod +x /app/start.sh
+COPY start.sh /start.sh
+RUN chmod +x /start.sh
 
 # Menjalankan start.sh yang mengatur eksekusi Rasa dan actions
 ENTRYPOINT ["/bin/bash", "/start.sh"]
