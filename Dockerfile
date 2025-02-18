@@ -5,6 +5,9 @@ FROM rasa/rasa:latest
 COPY . /app
 WORKDIR /app
 
+# Menjalankan perintah dengan hak akses root
+USER root
+
 # Memastikan pip sudah terinstal dan mengupgradenya
 RUN python -m ensurepip --upgrade && \
     pip install --upgrade pip --no-cache-dir
