@@ -4,7 +4,7 @@ COPY . /app
 WORKDIR /app
 # Mengatur virtual environment
 # Mengupgrade pip
-RUN chown -R $(whoami) /opt/venv/
+
 
 RUN pip install --upgrade pip
 
