@@ -4,7 +4,7 @@
 athena_env/
 
 # Ignore Rasa model files (these can be quite large)
-models/
+# models/
 
 # Ignore logs and temporary files
 logs/
