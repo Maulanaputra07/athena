@@ -19,6 +19,8 @@ intents:
 - daftar_ulang
 - dokumen
 - faq
+- thanks
+# - tanya_jurusan
 
 
 retrieval_intents:
@@ -46,6 +48,9 @@ slots:
     mappings:
       - type: custom
     # auto_fill: false
+
+  greet_counter:
+    type:
 
   fallback_count:
     type: any
@@ -102,7 +107,7 @@ response_selector:
 
 responses:
   utter_faq/ppdb:
-    - text: "Mau daftar? Gampang banget! Kamu bisa daftar lewat WhatsApp atau langsung ke website [link]. Abis itu, tinggal daftar ulang ke sekolah."
+    - text: "Mau daftar? Gampang banget! Kamu bisa daftar lewat WhatsApp atau langsung ke website https://athena.openkoneksi.com/. Abis itu, tinggal daftar ulang ke sekolah."
 
   utter_faq/jurusan:
     - text: |
@@ -125,19 +130,37 @@ responses:
   - text: Waalaikumsalam! Salam hangat untuk Anda.
   
   utter_greet:
-  - text: Haii! Aku Athena ✨ Siap jawab semua pertanyaan kamu tentang SMK Tunas Harapan Pati. Mau tanya soal jurusan, kegiatan sekolah, atau pengalaman seru di sini? Aku akan bantu jawabin 🔥😎
-  
+  - text: "Haii! Aku Athena ✨ Siap jawab semua pertanyaan kamu tentang SMK Tunas Harapan Pati. Mau tanya soal jurusan, kegiatan sekolah, atau pengalaman seru di sini? Aku akan bantu jawabin 🔥😎"
+  - text: "Halo! Aku Athena! Pengen tahu lebih banyak soal SMK Tunas Harapan Pati? Aku siap kasih info! 🚀"
+  - text: "Heyy! Gimana kabarnya? Aku Athena, siap bantuin cari info tentang SMK Tunas Harapan Pati! 😊"
+  - text: "Hai hai! Ada yang bisa aku bantu? Mau tanya tentang jurusan, kegiatan sekolah, atau pengalaman seru di sini? 🎓"
+  - text: "Halo! Selamat datang! Aku Athena, chatbot super informatif buat SMK Tunas Harapan Pati. Yuk, ngobrol! 😃"
+
   utter_greet_user:
-  - text: Halo {nama_user}, gimana kabarnya? Lagi nyari info apa nih? Aku siap bantu!
-  
+  - text: "Halo {nama_user}, gimana kabarnya? Lagi nyari info apa nih? Aku siap bantu! 😊"
+  - text: "Hai, {nama_user}! Apa kabar? Ada yang bisa aku bantu soal SMK Tunas Harapan Pati?"
+  - text: "Hey {nama_user}, seneng ketemu lagi! Butuh info soal jurusan atau kegiatan sekolah? 😃"
+  - text: "Halo {nama_user}! Aku Athena. Mau tahu sesuatu tentang SMK Tunas Harapan Pati? Aku siap jawab! 🚀"
+  - text: "Hai, {nama_user}! Lagi kepoin SMK Tunas Harapan Pati, ya? Yuk, tanya aja!"
+
   utter_greet_time:
-  - text: Selamat {time}! Aku Athena, siap nemenin kamu cari info soal SMK Tunas Harapan Pati. Yuk, tanya-tanya aja!
+  - text: "Selamat {time}! Aku Athena, siap nemenin kamu cari info soal SMK Tunas Harapan Pati. Yuk, tany-tanya aja!"
+  - text: "Halo! Selamat {time}! Mau tahu lebih banyak tentang SMK Tunas Harapan Pati? Aku siap bantu! 🔥"
+  - text: "Heyy! Selamat {time}! Aku Athena, chatbot yang siap jawab semua pertanyaan tentang sekolah ini! 😎"
+  - text: "Hai! Udah {time} nih, waktunya cari tahu lebih banyak soal SMK Tunas Harapan Pati! Tanya aja ya! 😃"
+  - text: "Selamat {time}! Aku Athena, teman virtualmu buat cari info sekolah. Mau tanya apa hari ini?"
   
   utter_goodbye:
   - text: selamat tinggal
   - text: terimakasih telah berkunjung
   - text: terimakasih semoga harimu menyenangkan
   - text: terimakasih
+
+  utter_you_are_welcome:
+  - text: "Sama-sama! 😊"
+  - text: "Senang bisa membantu! 🎉"
+  - text: "Sama-sama, semoga harimu menyenangkan!"
+  - text: "Jangan sungkan kalau butuh bantuan lagi!"
   
   utter_iamabot:
   - text: Hai! Aku Athena, asisten virtual yang siap bantu kamu soal pendaftaran dan pertanyaan tentang SMK Tunas Harapan Pati. Biar lebih akrab, boleh tau namanya siapa?
@@ -146,7 +169,7 @@ responses:
   - text: "Saya dapat membantu anda dengan menjawab pertanyaan mengenai SMK Tunas Harapan Pati, membantu anda dalam melakukan pendaftaran, dan hal-hal yang berkaitan dengan SMK Tunas Harapan Pati"
   
   utter_perkenalan:
-  - text: Wih, {nama_user}, nama keren sekali! Jadi, mau cari info apa nih?
+  - text: Wih, {nama_user}, nama kamu keren sekali! Jadi, mau cari info apa nih?
   
   utter_tanggal:
   - text: Pendaftaran dibuka pada tanggal 11 maret.
@@ -159,6 +182,9 @@ responses:
       Nih, info detail tentang jurusan {jurusan}:
         {informasi_jurusan}
         Kalau masih ada yang kurang jelas, tanya aja ya! 🤩
+
+  utter_tanya_jurusan:
+  - text: "Boleh sebutkan nama jurusan yang ingin kamu tanyakan?"
       
   utter_default:
   - text: >

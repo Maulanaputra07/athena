@@ -97,7 +97,8 @@ class ActionJelaskanJurusan(Action):
         if jurusan and informasi_jurusan:
             dispatcher.utter_message(f"Berikut informasi mengenai {jurusan}: {informasi_jurusan}")
         else:
-            dispatcher.utter_message("Jurusan mana yang ingin kamu tanyakan?")
+            # dispatcher.utter_message("Jurusan mana yang ingin kamu tanyakan?")
+            dispatcher.utter_message(response="utter_tanya_jurusan")
         return []
 
     

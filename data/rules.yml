@@ -58,6 +58,14 @@ rules:
     - intent: tanya_detail_jurusan
     - action: action_jelaskan_jurusan
 
+# - rule: Simpan nama jurusan setelah diminta
+#   steps:
+#     - intent: tanya_jurusan
+#     - slot_was_set:
+#         - jurusan: null
+#     - action: action_set_jurusan
+#     - action: action_jelaskan_jurusan
+
 - rule: Jawab pertanyaan tentang jurusan telah dipilh
   condition:
     - slot_was_set:
@@ -101,6 +109,11 @@ rules:
   steps:
   - intent: nlu_fallback
   - action: action_log_fallback
+
+- rule: respond to thanks
+  steps:
+  - intent: thanks
+  - action: utter_you_are_welcome
   
 # - rule: agree
 #   steps:

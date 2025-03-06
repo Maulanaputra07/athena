@@ -50,16 +50,25 @@ nlu:
     - sampai jumpa
     - good by
     - cee you later
-    - good night
     - bye
     - goodbye
     - have a nice day
-    - see you around
     - bye bye
     - see you later
     - dahhh
-    - sudah, terima kasih
-    - terimakasih
+    - selamat tinggal
+
+- intent: thanks
+  examples: |
+    - terimakasih ya
+    - makasih
+    - ty
+    - thanks
+    - terima kasih banyak
+    - makasih banget
+    - thank you
+    - makasih ya
+    - terima kasih
 
 - intent: affirm
   examples: |
@@ -191,6 +200,24 @@ nlu:
 
 - intent: pilih_jurusan
   examples: |
+    - Teknik Jaringan Komputer dan Telekomunikasi
+    - TJKT
+    - Teknik Otomasi Industri
+    - TOI
+    - Teknik Instalasi Tenaga Listrik
+    - TITL
+    - Kimia Analisis
+    - KA
+    - Desain Komunikasi Visual
+    - DKV
+    - Broadcasting TV & Film
+    - Broadcasting
+    - Teknik Otomotif
+    - TO
+    - Teknik Las
+    - TL
+    - Teknik Mesin
+    - TM
     - saya memilih Teknik Jaringan Komputer dan Telekomunikasi(jurusan)
     - saya memilih TJKT(jurusan)
     - Saya pilih Teknik Otomasi Industri(jurusan)
@@ -227,6 +254,13 @@ nlu:
     - Saya tertarik dengan TL(jurusan)
     - Saya memilih jurusan Teknik Mesin(jurusan)
     - Saya ingin belajar TM(jurusan)
+
+# - intent: tanya_jurusan
+#   examples: |
+#     - Aku mau tanya tentang jurusan [TJKT](jurusan)
+#     - Bisa jelaskan lebih lanjut soal [Kimia Analisis](jurusan)?
+#     - Aku tertarik dengan [Desain Komunikasi Visual](jurusan)
+#     - Jelaskan lebih detail tentang [Teknik Mesin](jurusan)
 
 
 - intent: tanya_detail_jurusan
